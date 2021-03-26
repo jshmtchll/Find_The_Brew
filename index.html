@@ -5,26 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css"/>
+    <!--favicon-->
+    <link rel="shortcut icon" type="image/png" href="./assets/images/fav1.png"/>
     <title>Find The Brew</title>
 </head>
 <body>
     <nav>
         <div class="nav-wrapper">
-          <form>
+          <form id="search-form">
             <div class="input-field">
-              <input id="search" type="search" required>
-              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <input class="header-input" id="search" type="search" required /> 
+              <label class="label-icon" for="search"><i class="material-icons">search</i>  </label>
               <i class="material-icons">close</i>
-            </div>
+                <!--search button-->
+                <div class="box-1">
+                  <div id="search-btn" class="button button-one">
+                    <span>SEARCH</span>
+                  </div>
+                </div>
+            
+              </div>
           </form>
         </div>
-      </nav>
+    </nav>
+
+    <!--intro statement about app-->
+    <div class="row">
+        <div class="intro container">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+            optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+            obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+            nihil
+        </div>
+    </div>
+
+    <div class="cards container">
+      <div class="cards row">
+        <div class="col s12 m5">
+          <div class="card-panel red darken-2">
+            <img class="card-image" src="https://www.austinchronicle.com/binary/f1b9/food_feature1-4.jpg"/>
+            <h4>Austin Beer Works  <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a></h4>
+            <span class="white-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+              molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+              numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+              optio, eaque rerum! Provident similique accusantium nemo autem.
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.993330461736!2d-97.73197778487693!3d30.379547281761557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644cb90029e549d%3A0x5486f103015519db!2sAustin%20Beerworks!5e0!3m2!1sen!2sus!4v1616779122391!5m2!1sen!2sus" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </span>
+          </div>
+        </div>
+      
+        <div class="col s12 m5">
+          <div class="card-panel red darken-2">
+            <img class="card-image" src="https://pbs.twimg.com/media/EFRdvRtXoAIIdn4.jpg"/>
+            <h4>Jester King Brewery <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a></h4>
+            <span class="white-text">Quo neque error repudiandae fuga? Ipsa laudantium molestias eos 
+              sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
+              recusandae alias error harum maxime adipisci amet laborum. Perspiciatis 
+              minima nesciunt dolorem!
+            </span>
+          </div>
+        </div>
+        
+
+        
+      
+      </div>
+    </div>
+   
+    
+
+      
     
 
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
