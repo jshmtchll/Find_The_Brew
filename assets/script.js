@@ -69,4 +69,4 @@ let breweryFunc = function (data) {
 formInputEl.addEventListener("submit", formSubmit);
 searchBtn.addEventListener("click", formSubmit);
 
-//https://api.mapbox.com/styles/v1/jshmtchll/ckmtfshsz3jen17no8uuo5wh4/static/30.2547264,-98.0824692,0,0/300x200?access_token=pk.eyJ1IjoianNobXRjaGxsIiwiYSI6ImNrbW10N3V3aTFud3QydW1pNGQ0YnE4ZXEifQ.g5TMwli6T0663l8JG6x1EA
+
