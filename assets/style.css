@@ -5,7 +5,13 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column
 }
+main {
+    flex: 1 0 auto;
+  }
 
 .header-input {
     font-size: 45px !important;
@@ -148,6 +154,11 @@ div[class*=box] {
   opacity: 1;
 }
 
+.page-footer {
+    padding-bottom: 10px
+}
+
+
 a {
     color: inherit;
     text-decoration: none;
@@ -156,4 +167,3 @@ a {
 a:hover {
 	text-decoration:underline;
 }
-
