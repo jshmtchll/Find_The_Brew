@@ -86,5 +86,3 @@ formInputEl.addEventListener("submit", formSubmit);
 searchBtn.addEventListener("click", formSubmit);
 
 $(document).on('click', '.save-fave', favortiesFunc);
-
-
