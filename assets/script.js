@@ -47,6 +47,7 @@ let breweryFunc = function (data) {
     let lon = data[i].longitude;
     //formats the phone number (xxx) xxx-xxxx
     let phone = data[i].phone;
+
     let formatPhone = phone.replace(/(\d{3})(\d{3})(\d{4})/,"($1) $2-$3");
     //had to wrap around an if statement because quite a bit of the breweries did not have LAT and LON
     if (lat != null && lon != null) {
@@ -58,13 +59,11 @@ let breweryFunc = function (data) {
             <img class="favorite-btn image-main" src="./assets/images/favorite1.png"/>
             <img class="favorite-btn image-hover" src="./assets/images/favorite.png"/>
             </div>
-            
             <span class="card-span white-text"> <b>Address:</b> ${data[i].street} ${data[i].city}, ${data[i].state} <br>
             <b>Phone Number:</b> ${formatPhone} <br>
             <b>Website:</b> ${data[i].website_url}</span>
             <br>
             <div class="map"><img class="map-img" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s+555555(${lon},${lat})/${lon},${lat},15,0/300x200?access_token=pk.eyJ1IjoianNobXRjaGxsIiwiYSI6ImNrbW10N3V3aTFud3QydW1pNGQ0YnE4ZXEifQ.g5TMwli6T0663l8JG6x1EA" /></div>
-            
           </div>
         </div>`;
       cardsContainer.insertAdjacentHTML("afterbegin", breweriesEl);
