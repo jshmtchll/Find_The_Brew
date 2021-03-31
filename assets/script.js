@@ -55,7 +55,7 @@ let breweryFunc = function (data) {
             <div class="card-panel effect2">
             <div class="img-span"><img class="card-image" src="${randomImages[image]}"/></div>
             <h4 class="brew-title">${data[i].name} </h4>
-            <div class="fav-btn save-fave" id="data-id="${data[i].id}">
+            <div class="fav-btn save-fave">
             <img class="favorite-btn image-main" src="./assets/images/favorite1.png"/>
             <img class="favorite-btn image-hover" src="./assets/images/favorite.png"/>
             </div>
