@@ -10,6 +10,7 @@ body {
 .header-input {
     font-size: 45px !important;
     text-align: center !important;
+	text-indent: -60px;
 }
 
 .intro {
@@ -103,5 +104,9 @@ div[class*=box] {
 }
 
 .img-span {
-	text-align: center !important;
+	text-align: center;
+}
+
+.card-panel {
+	background-color: #EE6E73;
 }
