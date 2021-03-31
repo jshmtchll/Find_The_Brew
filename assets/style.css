@@ -17,6 +17,7 @@ main {
     font-size: 45px !important;
     text-align: center !important;
 	text-indent: -60px;
+	font-family: 'Pacifico', cursive;
 }
 
 .intro {
@@ -24,6 +25,15 @@ main {
     margin:0px auto !important;
     margin-top: 79px !important;
     color: ivory;
+}
+
+.logo {
+	width: 330px;
+}
+
+.page-title {
+	margin: 0;
+	font-family: 'Pacifico', cursive;
 }
 
 div[class*=box] {
@@ -153,6 +163,10 @@ div[class*=box] {
 .fav-btn:hover img.image-hover {
   opacity: 1;
 }
+.page-footer {
+    padding-bottom: 10px
+}
+
 
 a {
     color: inherit;
@@ -161,8 +175,4 @@ a {
 
 a:hover {
 	text-decoration:underline;
-}
-
-.page-footer {
-    padding-bottom: 10px
 }
