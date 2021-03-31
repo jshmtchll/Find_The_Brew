@@ -40,6 +40,7 @@ let formSubmit = function (event) {
   });
 };
 
+
 //function to display cards
 let breweryFunc = function (data) {
   for (let i = 0; i < data.length; i++) {
@@ -47,15 +48,22 @@ let breweryFunc = function (data) {
     let lat = data[i].latitude;
     let lon = data[i].longitude;
     console.log(lat, lon);
+    //formats the phone number (xxx) xxx-xxxx
+    let phone = data[i].phone;
+    console.log(phone);
+    let formatPhone = phone.replace(/(\d{3})(\d{3})(\d{4})/,"($1)$2-$3");
     //had to wrap around an if statement because quite a bit of the breweries did not have LAT and LON
     if (lat != null && lon != null) {
       let breweriesEl = `<div class="col s12 m5">
             <div class="card-panel red darken-2">
             <img class="card-image" src="${randomImages[image]}"/>
             <h4>${data[i].name}<a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a></h4>
-            <span class="white-text"> Address: ${data[i].street} ${data[i].city}, ${data[i].state} Phone Number: ${data[i].phone} Website: ${data[i].website_url}
+            <span class="card-span white-text"> <b>Address:</b> ${data[i].street} ${data[i].city}, ${data[i].state} <br>
+            <b>Phone Number:</b> ${formatPhone} <br>
+            <b>Website:</b> ${data[i].website_url}</span>
+            <br>
             <img class="map-img" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s+555555(${lon},${lat})/${lon},${lat},15,0/300x200?access_token=pk.eyJ1IjoianNobXRjaGxsIiwiYSI6ImNrbW10N3V3aTFud3QydW1pNGQ0YnE4ZXEifQ.g5TMwli6T0663l8JG6x1EA" />
-            </span>
+            
           </div>
         </div>`;
       cardsContainer.insertAdjacentHTML("afterbegin", breweriesEl);
