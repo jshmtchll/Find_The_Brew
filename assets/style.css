@@ -101,6 +101,7 @@ div[class*=box] {
 
 .card-span {
 	line-height: 10px;
+	
 }
 
 .img-span {
@@ -110,3 +111,16 @@ div[class*=box] {
 .card-panel {
 	background-color: #EE6E73;
 }
+
+.brew-title {
+	text-shadow: 2px 2px 5px white;
+}
+
+.map-img {
+	padding-top: 14px;
+}
+
+.map {
+	text-align: center;
+}
+
