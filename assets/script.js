@@ -1,12 +1,9 @@
-//TODO:
-//Style card text (address, website and number) so it displays in different rows .... and looks a bit more presentable
-//Set website text as a link so they can click and visit the brewery website
-//Figure out how we will put the map in there still.... I'm still working on the logic for it TYPE 422 ERROR
-
 let userInputEl = document.getElementById("search");
 let formInputEl = document.getElementById("search-form");
 let searchBtn = document.getElementById("search-btn");
-let cardsContainer = document.getElementById("cards-row");
+let cardsContainer = document.getElementById("home-row");
+let favoriteBtn = document.querySelector(".save-fave")
+let faveArr = JSON.parse(window.localStorage.getItem("favorites")) || [];
 //creates a new array
 let randomImages = new Array();
 
@@ -30,7 +27,7 @@ let formSubmit = function (event) {
   fetch(brewUrl).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
-        console.log(data);
+        //console.log(data);
         $(cardsContainer).empty();
         breweryFunc(data);
       });
@@ -46,27 +43,48 @@ let breweryFunc = function (data) {
     let image = Math.floor(Math.random() * randomImages.length);
     let lat = data[i].latitude;
     let lon = data[i].longitude;
-    console.log(lat, lon);
+    //console.log(lat, lon);
     //had to wrap around an if statement because quite a bit of the breweries did not have LAT and LON
     if (lat != null && lon != null) {
       let breweriesEl = `<div class="col s12 m5">
             <div class="card-panel red darken-2">
             <img class="card-image" src="${randomImages[image]}"/>
-            <h4>${data[i].name}<a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a></h4>
+            <h4 class="brew-name">${data[i].name}<a class="btn-floating btn-small waves-effect waves-light red save-fave" data-id="${data[i].id}"><i class="material-icons">add</i></a></h4>
             <span class="white-text"> Address: ${data[i].street} ${data[i].city}, ${data[i].state} Phone Number: ${data[i].phone} Website: ${data[i].website_url}
             <img class="map-img" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s+555555(${lon},${lat})/${lon},${lat},15,0/300x200?access_token=pk.eyJ1IjoianNobXRjaGxsIiwiYSI6ImNrbW10N3V3aTFud3QydW1pNGQ0YnE4ZXEifQ.g5TMwli6T0663l8JG6x1EA" />
             </span>
           </div>
         </div>`;
       cardsContainer.insertAdjacentHTML("afterbegin", breweriesEl);
-      //trying to pass the values of lat and lon on to the mapbox api
-      //mapFunc(lat, lon)
     }
   }
 };
 
+let favortiesFunc = function(){
+    let brewId = this.getAttribute("data-id")
+    faveArr.push(brewId)
+    console.log(faveArr)
+    window.localStorage.setItem("favorites", JSON.stringify(faveArr))
+}
+
+let favoritesPage = function(){
+    for (let i = 0; i < faveArr.length; i++) {
+        let getBrewUrl = "https://api.openbrewerydb.org/breweries/" + faveArr[i];
+        fetch(getBrewUrl)
+        .then(function(response){
+            if(response.ok){
+                response.json().then(function (data) {
+                    console.log(data)
+                })
+            }
+        })
+    }
+}
+favoritesPage()
 
 formInputEl.addEventListener("submit", formSubmit);
 searchBtn.addEventListener("click", formSubmit);
+
+$(document).on('click', '.save-fave', favortiesFunc);
 
 
