@@ -88,16 +88,20 @@ div[class*=box] {
 }
 
 .card-image {
-    width: 200px;
+    width: 100%;
 }
 
 .cards {
     display: flex;
     flex-wrap: wrap; 
     justify-content: center; 
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 .card-span {
 	line-height: 10px;
+}
+
+.img-span {
+	text-align: center !important;
 }

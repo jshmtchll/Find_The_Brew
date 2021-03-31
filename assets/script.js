@@ -47,13 +47,12 @@ let breweryFunc = function (data) {
     console.log(lat, lon);
     //formats the phone number (xxx) xxx-xxxx
     let phone = data[i].phone;
-    console.log(phone);
-    let formatPhone = phone.replace(/(\d{3})(\d{3})(\d{4})/,"($1)$2-$3");
+    let formatPhone = phone.replace(/(\d{3})(\d{3})(\d{4})/,"($1) $2-$3");
     //had to wrap around an if statement because quite a bit of the breweries did not have LAT and LON
     if (lat != null && lon != null) {
       let breweriesEl = `<div class="col s12 m5">
             <div class="card-panel red darken-2">
-            <img class="card-image" src="${randomImages[image]}"/>
+            <div class="img-span"><img class="card-image" src="${randomImages[image]}"/></div>
             <h4>${data[i].name}<a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a></h4>
             <span class="card-span white-text"> <b>Address:</b> ${data[i].street} ${data[i].city}, ${data[i].state} <br>
             <b>Phone Number:</b> ${formatPhone} <br>
