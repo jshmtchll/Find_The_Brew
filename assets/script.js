@@ -62,7 +62,7 @@ let breweryFunc = function (data) {
             <b>Phone Number:</b> <a href="tel:${data[i].phone}">${formatPhone}</a> <br>
             <b>Website:</b> <a href="${data[i].website_url}" target="_blank">${data[i].website_url}</a></span>
             <br> 
-            <div class="map"><img class="map-img" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s+555555(${lon},${lat})/${lon},${lat},15,0/300x200?access_token=pk.eyJ1IjoianNobXRjaGxsIiwiYSI6ImNrbW10N3V3aTFud3QydW1pNGQ0YnE4ZXEifQ.g5TMwli6T0663l8JG6x1EA" /></div>
+            <div class="map"><img class="map-img" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s+555555(${lon},${lat})/${lon},${lat},15,0/400x300?access_token=pk.eyJ1IjoianNobXRjaGxsIiwiYSI6ImNrbW10N3V3aTFud3QydW1pNGQ0YnE4ZXEifQ.g5TMwli6T0663l8JG6x1EA" /></div>
           </div>
         </div>`;
       cardsContainer.insertAdjacentHTML("afterbegin", breweriesEl);
