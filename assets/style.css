@@ -124,3 +124,26 @@ div[class*=box] {
 	text-align: center;
 }
 
+.favorite-btn {
+	height: 40px;
+}
+
+.fav-btn {
+	position: relative;
+	width: 60px;
+	max-width: 100%;
+}
+.fav-btn img.image-hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.fav-btn:hover img.image-hover {
+  opacity: 1;
+}
+

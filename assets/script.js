@@ -53,7 +53,12 @@ let breweryFunc = function (data) {
       let breweriesEl = `<div class="col s12 m5">
             <div class="card-panel effect2">
             <div class="img-span"><img class="card-image" src="${randomImages[image]}"/></div>
-            <h4 class="brew-title">${data[i].name} <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a></h4>
+            <h4 class="brew-title">${data[i].name} </h4>
+            <div class="fav-btn save-fave" id="data-id="${data[i].id}">
+            <img class="favorite-btn image-main" src="./assets/images/favorite1.png"/>
+            <img class="favorite-btn image-hover" src="./assets/images/favorite.png"/>
+            </div>
+            
             <span class="card-span white-text"> <b>Address:</b> ${data[i].street} ${data[i].city}, ${data[i].state} <br>
             <b>Phone Number:</b> ${formatPhone} <br>
             <b>Website:</b> ${data[i].website_url}</span>
