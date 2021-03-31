@@ -5,7 +5,13 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column
 }
+main {
+    flex: 1 0 auto;
+  }
 
 .header-input {
     font-size: 45px !important;
@@ -157,3 +163,6 @@ a:hover {
 	text-decoration:underline;
 }
 
+.page-footer {
+    padding-bottom: 10px
+}
