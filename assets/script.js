@@ -58,10 +58,10 @@ let breweryFunc = function (data) {
             <img class="favorite-btn image-main" src="./assets/images/favorite1.png"/>
             <img class="favorite-btn image-hover" src="./assets/images/favorite.png"/>
             </div>
-            <span class="card-span white-text"> <b>Address:</b> ${data[i].street} ${data[i].city}, ${data[i].state} <br>
-            <b>Phone Number:</b> ${formatPhone} <br>
-            <b>Website:</b> ${data[i].website_url}</span>
-            <br>
+            <span class="card-span white-text"> <b>Address:</b> <a href="https://maps.google.com/?q=${data[i].street} ${data[i].city}, ${data[i].state}" target="_blank">${data[i].street} ${data[i].city}, ${data[i].state}</a> <br>
+            <b>Phone Number:</b> <a href="tel:${data[i].phone}">${formatPhone}</a> <br>
+            <b>Website:</b> <a href="${data[i].website_url}" target="_blank">${data[i].website_url}</a></span>
+            <br> 
             <div class="map"><img class="map-img" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s+555555(${lon},${lat})/${lon},${lat},15,0/300x200?access_token=pk.eyJ1IjoianNobXRjaGxsIiwiYSI6ImNrbW10N3V3aTFud3QydW1pNGQ0YnE4ZXEifQ.g5TMwli6T0663l8JG6x1EA" /></div>
           </div>
         </div>`;
@@ -88,7 +88,7 @@ let favoritesPage = function(){
                     console.log(data.phone)
                     let image = Math.floor(Math.random() * randomImages.length);
                     let phone = data.phone;
-                    let formatPhone = phone.replace(/(\d{3})(\d{3})(\d{4})/,"($1)$2-$3");
+                    let formatPhone = phone.replace(/(\d{3})(\d{3})(\d{4})/,"($1) $2-$3");
                     let lat = data.latitude;
                     let lon = data.longitude;
                     let breweriesEl = `<div class="col s12 m5">
