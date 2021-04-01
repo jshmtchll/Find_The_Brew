@@ -3,7 +3,7 @@
 ## User Story
 
 AS A beer enthusiast and a traveler 
-I WANT to find a nearby breweries to unwind where ever I travel
+I WANT to find a nearby breweries to unwind wherever I travel
 
 GIVEN an application with Search input and instructions on how to navigate the page
 WHEN I search for a city
@@ -24,6 +24,7 @@ THEN I am taken back to home page where I can keep searching breweries
 ## Demo
 
 ## URL
+https://balloonicorn92.github.io/Find_The_Brew/
 
 ## APIs Used
 Open Brewery: 
