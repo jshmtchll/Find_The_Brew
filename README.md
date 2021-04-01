@@ -22,6 +22,7 @@ WHEN I click the go back to home page button
 THEN I am taken back to home page where I can keep searching breweries
 
 ## Demo
+<img src="assets/images/example.gif" alt="find the brew" width="720"/>
 
 ## URL
 https://balloonicorn92.github.io/Find_The_Brew/
