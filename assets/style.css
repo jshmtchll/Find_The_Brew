@@ -128,10 +128,13 @@ div[class*=box] {
 
 .card-panel {
 	background-color: #EE6E73;
+	height: 900px;
 }
 
 .brew-title {
 	text-shadow: 2px 2px 5px white;
+	
+	
 }
 
 .map-img {
@@ -268,3 +271,25 @@ a:hover {
 	font-weight: bold;
   }
   
+  /*media queries*/
+/*MQ FOR SMALLER DESKTOP SCREENS*/
+@media screen and (max-width: 980px) {
+	.card-panel {
+	background-color: #EE6E73;
+	height: auto;
+}
+  }
+  
+  /*MQ FOR TABLETS AND SMALLER*/
+  @media screen and (max-width: 768px) {
+	  
+  }
+  
+  /*MQ FOR MOBILE PHONES AND SMALLER */
+  @media screen and (max-width: 575px) {
+		.card-panel {
+			margin-left: 40px;
+			width: 100%;
+		}
+	
+  }
