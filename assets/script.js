@@ -25,7 +25,7 @@ let formSubmit = function (event) {
   event.preventDefault();
   let city = userInputEl.value.trim().toUpperCase();
   let brewUrl = "https://api.openbrewerydb.org/breweries?by_city=" + city;
-  console.log(BrewUrl)
+  console.log(brewUrl)
   fetch(brewUrl).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
