@@ -26,6 +26,7 @@ let formSubmit = function (event) {
   event.preventDefault();
   let city = userInputEl.value.trim().toUpperCase();
   let brewUrl = "https://api.openbrewerydb.org/breweries?by_city=" + city;
+  console.log(brewUrl)
   fetch(brewUrl).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
@@ -86,7 +87,6 @@ let favoritesPage = function(){
             if(response.ok){
                 response.json()
                 .then(function (data) {
-                    console.log(data.phone)
                     let image = Math.floor(Math.random() * randomImages.length);
                     let phone = data.phone;
                     let formatPhone = phone.replace(/(\d{3})(\d{3})(\d{4})/,"($1) $2-$3");
@@ -96,9 +96,9 @@ let favoritesPage = function(){
                     <div class="card-panel effect2">
                     <div class="img-span"><img class="card-image" src="${randomImages[image]}"/></div>
                     <h4 class="brew-title">${data.name} </h4>
-                    <span class="card-span white-text"> <b>Address:</b> ${data.street} ${data.city}, ${data.state} <br>
-                    <b>Phone Number:</b> ${formatPhone} <br>
-                    <b>Website:</b> ${data.website_url}</span>
+                    <span class="card-span white-text"> <b>Address:</b> <a href="https://maps.google.com/?q=${data.street} ${data.city}, ${data.state}" target="_blank">${data.street} ${data.city}, ${data.state}</a> <br>
+                    <b>Phone Number:</b> <a href="tel:${data.phone}">${formatPhone}</a> <br>
+                    <b>Website:</b> <a href="${data.website_url}" target="_blank">${data.website_url}</a></span>
                     <br>
                     <div class="map"><img class="map-img" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s+555555(${lon},${lat})/${lon},${lat},15,0/300x200?access_token=pk.eyJ1IjoianNobXRjaGxsIiwiYSI6ImNrbW10N3V3aTFud3QydW1pNGQ0YnE4ZXEifQ.g5TMwli6T0663l8JG6x1EA" /></div>
                     </div>
