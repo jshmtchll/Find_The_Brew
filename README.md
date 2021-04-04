@@ -25,6 +25,7 @@ THEN I am taken back to home page where I can keep searching breweries
 <img src="assets/images/example.gif" alt="find the brew" width="720"/>
 
 ## URL
+## [Link to deployed application](https://jshmtchll.github.io/Find_The_Brew/) ##
 
 ## APIs Used
 Open Brewery: 
